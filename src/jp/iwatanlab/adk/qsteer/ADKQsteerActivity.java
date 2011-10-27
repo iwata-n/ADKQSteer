@@ -54,6 +54,11 @@ public class ADKQsteerActivity extends BaseActivity implements OnTouchListener {
 
     private byte mBand = 0;
 
+    /**
+     * チョロQにコマンドを送信する
+     * 
+     * @param id コマンド
+     */
     private void sendCommand(int id) {
         CtrlData ctrl = ctrlData.get(id);
         byte command = ctrl.normal;
@@ -71,6 +76,11 @@ public class ADKQsteerActivity extends BaseActivity implements OnTouchListener {
 
     }
 
+    /**
+     * Viewにタッチイベントを登録する
+     * 
+     * @param id ViewのID
+     */
     private void setTouchEvent(int id) {
         View v = findViewById(id);
         v.setOnTouchListener(this);
@@ -105,11 +115,19 @@ public class ADKQsteerActivity extends BaseActivity implements OnTouchListener {
 
     }
 
+    /**
+     * ボタンクリック時の動作
+     * 
+     * @param v
+     */
     public void onClickCtrl(View v) {
         // int id = Integer.parseInt((String) v.getTag());
         // sendCommand(id);
     }
 
+    /**
+     * タッチ時の動作
+     */
     @Override
     public boolean onTouch(View v, MotionEvent event) {
 
